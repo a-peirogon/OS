@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.2.7. Standard Library &#8212; Scientific Python Lectures</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nature.css?v=c29d3f28" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss@3.0.0/build/base-min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script src="../../_static/documentation_options.js?v=f7c095fe"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=0729d509"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="../../_static/scroll_highlight_toc.js?v=cbac5d29"></script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.2.8. Exception handling in Python" href="exceptions.html" />
+    <link rel="prev" title="1.2.6. Input and Output" href="io.html" />
+ 
+
+<script defer data-domain="lectures.scientific-python.org" src="https://views.scientific-python.org/js/script.js"></script>
+
+  </head><body>
+    <!-- Use the header to add javascript -->
+    
+
+    <script type="text/javascript">
+     // Function to toggle tip div
+     function toggle_tip_div(obj) {
+       $(obj).find("p.summary").remove();
+
+       var content = $(obj).text();
+       var html = $(obj).html();
+
+       if ($(obj).hasClass("collapsed")) {
+         // Expand
+         $(obj).html('<p class="summary"><img src="../../_static/minus.png"></p>' + html);
+       } else {
+         // Collapse
+         if(content.length > 50) {
+           content = content.substr(0, 47);
+         }
+         $(obj).html('<p class="summary"><img src="../../_static/plus.png">' + content + '...</p>' + html);
+       }
+
+       $(obj).toggleClass("collapsed");
+     }
+
+     $(document).ready(function () {
+       $(".tip").each(function() {
+         $(this).find("p.admonition-title").remove();
+       });
+       // Collapse all tips and add plus sign
+       $(".tip").each(function() { toggle_tip_div($(this)); });
+
+       $(".tip")
+         .click(function(event){
+           // Change state of the global button
+           $('div.related li.transparent').removeClass('transparent');
+           toggle_tip_div($(this));
+           if (event.target.tagName.toLowerCase() != "a") {
+             return true; //Makes links clickable
+           }
+         });
+     });
+    </script>
+
+
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a></li>
+        <li class="right" >
+          <a href="exceptions.html" title="1.2.8. Exception handling in Python"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="io.html" title="1.2.6. Input and Output"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Scientific Python Lectures</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" ><span class="section-number">1. </span>Getting started with Python for science</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="python_language.html" accesskey="U"><span class="section-number">1.2. </span>The Python language</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">1.2.7. </span>Standard Library</a></li>
+     
+    <!-- Insert a tip toggle in the navigation bar -->
+        <li class="left">
+        <!-- On click, expand all tips -->
+        <!--
+        <a>
+            <img src="../../_static/plus.png"
+                 alt="Expand tips" style="padding: 1ex;"/>
+            <span class="hiddenlink">Collapse document to compact view</span>
+        </a>
+        -->
+        </li>
+    <li class="right edit_on_github"><a href="https://github.com/scipy-lectures/scientific-python-lectures/edit/main/intro/language/standard_library.rst">Edit
+      <span class="tooltip">
+        Improve this page:<br/>Edit it on Github.
+      </span>
+    </a>
+    </li>
+    
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <section id="standard-library">
+<h1><span class="section-number">1.2.7. </span>Standard Library<a class="headerlink" href="#standard-library" title="Link to this heading">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Reference document for this section:</p>
+<ul class="simple">
+<li><p>The Python Standard Library documentation:
+<a class="reference external" href="https://docs.python.org/3/library/index.html">https://docs.python.org/3/library/index.html</a></p></li>
+<li><p>Python Essential Reference, David Beazley, Addison-Wesley Professional</p></li>
+</ul>
+</div>
+<section id="os-module-operating-system-functionality">
+<h2><span class="section-number">1.2.7.1. </span><code class="docutils literal notranslate"><span class="pre">os</span></code> module: operating system functionality<a class="headerlink" href="#os-module-operating-system-functionality" title="Link to this heading">¶</a></h2>
+<p><em>“A portable way of using operating system dependent functionality.”</em></p>
+<section id="directory-and-file-manipulation">
+<h3>Directory and file manipulation<a class="headerlink" href="#directory-and-file-manipulation" title="Link to this heading">¶</a></h3>
+<p>Current directory:</p>
+<p>List a directory:</p>
+<p>Make a directory:</p>
+<p>Rename the directory:</p>
+<p>Delete a file:</p>
+</section>
+<section id="os-path-path-manipulations">
+<h3><code class="docutils literal notranslate"><span class="pre">os.path</span></code>: path manipulations<a class="headerlink" href="#os-path-path-manipulations" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">os.path</span></code> provides common operations on pathnames.</p>
+</section>
+<section id="running-an-external-command">
+<h3>Running an external command<a class="headerlink" href="#running-an-external-command" title="Link to this heading">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Alternative to <code class="docutils literal notranslate"><span class="pre">os.system</span></code></p>
+<p>A noteworthy alternative to <code class="docutils literal notranslate"><span class="pre">os.system</span></code> is the <a class="reference external" href="https://amoffat.github.com/sh/">sh module</a>. Which provides much more convenient ways to
+obtain the output, error stream and exit code of the external command.</p>
+</div>
+</section>
+<section id="walking-a-directory">
+<h3>Walking a directory<a class="headerlink" href="#walking-a-directory" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">os.path.walk</span></code> generates a list of filenames in a directory tree.</p>
+</section>
+<section id="environment-variables">
+<h3>Environment variables:<a class="headerlink" href="#environment-variables" title="Link to this heading">¶</a></h3>
+</section>
+</section>
+<section id="shutil-high-level-file-operations">
+<h2><span class="section-number">1.2.7.2. </span><code class="docutils literal notranslate"><span class="pre">shutil</span></code>: high-level file operations<a class="headerlink" href="#shutil-high-level-file-operations" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">shutil</span></code> provides useful file operations:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">shutil.rmtree</span></code>: Recursively delete a directory tree.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shutil.move</span></code>: Recursively move a file or directory to another location.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shutil.copy</span></code>: Copy files or directories.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="glob-pattern-matching-on-files">
+<h2><span class="section-number">1.2.7.3. </span><code class="docutils literal notranslate"><span class="pre">glob</span></code>: Pattern matching on files<a class="headerlink" href="#glob-pattern-matching-on-files" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">glob</span></code> module provides convenient file pattern matching.</p>
+<p>Find all files ending in <code class="docutils literal notranslate"><span class="pre">.txt</span></code>:</p>
+</section>
+<section id="sys-module-system-specific-information">
+<h2><span class="section-number">1.2.7.4. </span><code class="docutils literal notranslate"><span class="pre">sys</span></code> module: system-specific information<a class="headerlink" href="#sys-module-system-specific-information" title="Link to this heading">¶</a></h2>
+<p>System-specific information related to the Python interpreter.</p>
+<ul class="simple">
+<li><p>Which version of python are you running and where is it installed:</p></li>
+</ul>
+<ul class="simple">
+<li><p>List of command line arguments passed to a Python script:</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">sys.path</span></code> is a list of strings that specifies the search path for
+modules.  Initialized from PYTHONPATH:</p>
+</section>
+<section id="pickle-easy-persistence">
+<h2><span class="section-number">1.2.7.5. </span><code class="docutils literal notranslate"><span class="pre">pickle</span></code>: easy persistence<a class="headerlink" href="#pickle-easy-persistence" title="Link to this heading">¶</a></h2>
+<p>Useful to store arbitrary objects to a file. Not safe or fast!</p>
+<aside class="topic">
+<p class="topic-title">Exercise</p>
+<p>Write a program to search your <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> for the module <code class="docutils literal notranslate"><span class="pre">site.py</span></code>.</p>
+</aside>
+<p><a class="reference internal" href="../scipy/solutions.html#path-site"><span class="std std-ref">The PYTHONPATH Search Solution</span></a></p>
+<p><div style="clear: both"></div></p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a></li>
+        <li class="right" >
+          <a href="exceptions.html" title="1.2.8. Exception handling in Python"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="io.html" title="1.2.6. Input and Output"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Scientific Python Lectures</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" ><span class="section-number">1. </span>Getting started with Python for science</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="python_language.html" ><span class="section-number">1.2. </span>The Python language</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">1.2.7. </span>Standard Library</a></li>
+     
+    <!-- Insert a tip toggle in the navigation bar -->
+        <li class="left">
+        <!-- On click, expand all tips -->
+        <!--
+        <a>
+            <img src="../../_static/plus.png"
+                 alt="Expand tips" style="padding: 1ex;"/>
+            <span class="hiddenlink">Collapse document to compact view</span>
+        </a>
+        -->
+        </li>
+    <li class="right edit_on_github"><a href="https://github.com/scipy-lectures/scientific-python-lectures/edit/main/intro/language/standard_library.rst">Edit
+      <span class="tooltip">
+        Improve this page:<br/>Edit it on Github.
+      </span>
+    </a>
+    </li>
+    
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 1980.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

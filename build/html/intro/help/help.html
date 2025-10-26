@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.6. Getting help and finding documentation &#8212; Scientific Python Lectures</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nature.css?v=c29d3f28" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss@3.0.0/build/base-min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <script src="../../_static/documentation_options.js?v=f7c095fe"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=0729d509"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="../../_static/scroll_highlight_toc.js?v=cbac5d29"></script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Solutions" href="../scipy/solutions.html" />
+ 
+
+<script defer data-domain="lectures.scientific-python.org" src="https://views.scientific-python.org/js/script.js"></script>
+
+  </head><body>
+    <!-- Use the header to add javascript -->
+    
+
+    <script type="text/javascript">
+     // Function to toggle tip div
+     function toggle_tip_div(obj) {
+       $(obj).find("p.summary").remove();
+
+       var content = $(obj).text();
+       var html = $(obj).html();
+
+       if ($(obj).hasClass("collapsed")) {
+         // Expand
+         $(obj).html('<p class="summary"><img src="../../_static/minus.png"></p>' + html);
+       } else {
+         // Collapse
+         if(content.length > 50) {
+           content = content.substr(0, 47);
+         }
+         $(obj).html('<p class="summary"><img src="../../_static/plus.png">' + content + '...</p>' + html);
+       }
+
+       $(obj).toggleClass("collapsed");
+     }
+
+     $(document).ready(function () {
+       $(".tip").each(function() {
+         $(this).find("p.admonition-title").remove();
+       });
+       // Collapse all tips and add plus sign
+       $(".tip").each(function() { toggle_tip_div($(this)); });
+
+       $(".tip")
+         .click(function(event){
+           // Change state of the global button
+           $('div.related li.transparent').removeClass('transparent');
+           toggle_tip_div($(this));
+           if (event.target.tagName.toLowerCase() != "a") {
+             return true; //Makes links clickable
+           }
+         });
+     });
+    </script>
+
+
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a></li>
+        <li class="right" >
+          <a href="../scipy/solutions.html" title="Solutions"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Scientific Python Lectures</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U"><span class="section-number">1. </span>Getting started with Python for science</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">1.6. </span>Getting help and finding documentation</a></li>
+     
+    <!-- Insert a tip toggle in the navigation bar -->
+        <li class="left">
+        <!-- On click, expand all tips -->
+        <!--
+        <a>
+            <img src="../../_static/plus.png"
+                 alt="Expand tips" style="padding: 1ex;"/>
+            <span class="hiddenlink">Collapse document to compact view</span>
+        </a>
+        -->
+        </li>
+    <li class="right edit_on_github"><a href="https://github.com/scipy-lectures/scientific-python-lectures/edit/main/intro/help/help.rst">Edit
+      <span class="tooltip">
+        Improve this page:<br/>Edit it on Github.
+      </span>
+    </a>
+    </li>
+    
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <section id="getting-help-and-finding-documentation">
+<span id="help"></span><h1><span class="section-number">1.6. </span>Getting help and finding documentation<a class="headerlink" href="#getting-help-and-finding-documentation" title="Link to this heading">¶</a></h1>
+<p><strong>Author</strong>: <em>Emmanuelle Gouillart</em></p>
+<p>Rather than knowing all functions in NumPy and SciPy, it is important to
+find rapidly information throughout the documentation and the available
+help. Here are some ways to get information:</p>
+<ul class="simple">
+<li><p>In Ipython, <code class="docutils literal notranslate"><span class="pre">help</span> <span class="pre">function</span></code> opens the docstring of the function. Only
+type the beginning of the function’s name and use tab completion to
+display the matching functions.</p></li>
+</ul>
+<p>In Ipython it is not possible to open a separated window for help and
+documentation; however one can always open a second <code class="docutils literal notranslate"><span class="pre">Ipython</span></code> shell
+just to display help and docstrings…</p>
+<ul>
+<li><p>Numpy’s and Scipy’s documentations can be browsed online on
+<a class="reference external" href="https://scipy.org">https://scipy.org</a> and <a class="reference external" href="https://numpy.org">https://numpy.org</a>. The <code class="docutils literal notranslate"><span class="pre">search</span></code> button is quite
+useful inside
+the reference documentation of the two packages.</p>
+<p>Tutorials on various topics as well as the complete API with all
+docstrings are found on this website.</p>
+</li>
+<li><p>Numpy’s and Scipy’s documentation is enriched and updated on a regular
+basis by users on a wiki <a class="reference external" href="https://numpy.org/doc/stable/">https://numpy.org/doc/stable/</a>. As a result,
+some docstrings are clearer or more detailed on the wiki, and you may
+want to read directly the documentation on the wiki instead of the
+official documentation website. Note that anyone can create an account on
+the wiki and write better documentation; this is an easy way to
+contribute to an open-source project and improve the tools you are
+using!</p></li>
+<li><p>The SciPy Cookbook <a class="reference external" href="https://scipy-cookbook.readthedocs.io">https://scipy-cookbook.readthedocs.io</a> gives recipes on many
+common problems frequently encountered, such as fitting data points,
+solving ODE, etc.</p></li>
+<li><p>Matplotlib’s website <a class="reference external" href="https://matplotlib.org/">https://matplotlib.org/</a> features a very
+nice <strong>gallery</strong> with a large number of plots, each of them shows both
+the source code and the resulting plot. This is very useful for
+learning by example. More standard documentation is also available.</p></li>
+<li><p>In Ipython, the magical function <code class="docutils literal notranslate"><span class="pre">%psearch</span></code> search for objects
+matching patterns. This is useful if, for example, one does not know
+the exact name  of a function.</p></li>
+<li><p>If everything listed above fails (and Google doesn’t have the
+answer)… don’t despair! There is a vibrant Scientific Python community.
+Scientific Python is present on various platform.
+<a class="reference external" href="https://scientific-python.org/community/">https://scientific-python.org/community/</a></p>
+<p>Packages like SciPy and NumPy also have their own channels. Have a look at
+their respective websites to find out how to engage with users and
+maintainers.</p>
+</li>
+</ul>
+<p><div style="clear: both"></div></p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a></li>
+        <li class="right" >
+          <a href="../scipy/solutions.html" title="Solutions"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Scientific Python Lectures</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" ><span class="section-number">1. </span>Getting started with Python for science</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">1.6. </span>Getting help and finding documentation</a></li>
+     
+    <!-- Insert a tip toggle in the navigation bar -->
+        <li class="left">
+        <!-- On click, expand all tips -->
+        <!--
+        <a>
+            <img src="../../_static/plus.png"
+                 alt="Expand tips" style="padding: 1ex;"/>
+            <span class="hiddenlink">Collapse document to compact view</span>
+        </a>
+        -->
+        </li>
+    <li class="right edit_on_github"><a href="https://github.com/scipy-lectures/scientific-python-lectures/edit/main/intro/help/help.rst">Edit
+      <span class="tooltip">
+        Improve this page:<br/>Edit it on Github.
+      </span>
+    </a>
+    </li>
+    
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 1980.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

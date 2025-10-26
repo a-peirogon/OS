@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.1. ¿Qué es un Sistema Operativo? &#8212; Sistemas Operativos - apuntes</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=d9e3f56a" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=d9e3f56a" />
+    <script src="../_static/documentation_options.js?v=4c5209b2"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=0729d509"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="../_static/scroll_highlight_toc.js?v=cbac5d29"></script>
+    <script src="../_static/translations.js?v=f85f4cfb"></script>
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="prev" title="1. Conceptos introductorios de Sistemas Operativos" href="index.html" />
+ 
+
+  </head><body>
+<!-- Use the header to add javascript -->
+<script type="text/javascript">
+// Function to toggle tip div
+function toggle_tip_div(obj) {
+$(obj).find("p.summary").remove();
+var content = $(obj).text();
+var html = $(obj).html();
+if ($(obj).hasClass("collapsed")) {
+// Expand
+$(obj).html('<p class="summary"><img src="../_static/minus.png"></p>' + html);
+ } else {
+// Collapse
+if(content.length > 50) {
+content = content.substr(0, 47);
+ }
+$(obj).html('<p class="summary"><img src="../_static/plus.png">' + content + '...</p>' + html);
+ }
+$(obj).toggleClass("collapsed");
+ }
+$(document).ready(function () {
+$(".tip").each(function() {
+$(this).find("p.admonition-title").remove();
+ });
+// Collapse all tips and add plus sign
+$(".tip").each(function() { toggle_tip_div($(this)); });
+$(".tip")
+ .click(function(event){
+// Change state of the global button
+$('div.related li.transparent').removeClass('transparent');
+toggle_tip_div($(this));
+if (event.target.tagName.toLowerCase() != "a") {
+return true; //Makes links clickable
+ }
+ });
+ });
+</script>
+
+<div class="related" role="navigation" aria-label="Related">
+  <h3>Navegación</h3>
+  <ul>
+    <li class="right" style="margin-right: 10px">
+      <a href="../py-modindex.html" title="Índice de Módulos Python"
+         >módulos</a>
+    </li>
+    <li class="right" >
+      <a href="index.html" title="1. Conceptos introductorios de Sistemas Operativos"
+         accesskey="P">anterior</a> |
+    </li>
+    <li class="nav-item nav-item-0">
+      <a href="../index.html">Sistemas Operativos - apuntes</a>
+    </li>
+    
+  
+<!-- Insert a tip toggle in the navigation bar -->
+<li class="left">
+<!-- On click, expand all tips -->
+<!--
+ <a>
+ <img src="../_static/plus.png"
+ alt="Expand tips" style="padding: 1ex;"/>
+ <span class="hiddenlink">Collapse document to compact view</span>
+ </a>
+ -->
+</li>
+ 
+  </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <section id="que-es-un-sistema-operativo">
+<h1><span class="section-number">1.1. </span>¿Qué es un Sistema Operativo?<a class="headerlink" href="#que-es-un-sistema-operativo" title="Link to this heading">¶</a></h1>
+<p>Un sistema operativo actúa como intermediario entre el usuario y el hardware, gestionando recursos y ofreciendo un entorno controlado para la ejecución de programas.</p>
+<section id="el-sistema-operativo-como-maquina-extendida">
+<h2><span class="section-number">1.1.1. </span>El Sistema Operativo como Máquina Extendida<a class="headerlink" href="#el-sistema-operativo-como-maquina-extendida" title="Link to this heading">¶</a></h2>
+<p>Proporciona abstracciones que simplifican el uso del hardware, ocultando los detalles físicos mediante interfaces más convenientes para los programas.</p>
+</section>
+<section id="el-sistema-operativo-como-administrador-de-recursos">
+<h2><span class="section-number">1.1.2. </span>El Sistema Operativo como Administrador de Recursos<a class="headerlink" href="#el-sistema-operativo-como-administrador-de-recursos" title="Link to this heading">¶</a></h2>
+<p>Coordina la asignación de CPU, memoria, dispositivos y almacenamiento entre múltiples procesos y usuarios.</p>
+</section>
+</section>
+<section id="historia-de-los-sistemas-operativos">
+<h1><span class="section-number">1.2. </span>Historia de los Sistemas Operativos<a class="headerlink" href="#historia-de-los-sistemas-operativos" title="Link to this heading">¶</a></h1>
+<p>La evolución de los sistemas operativos refleja los avances del hardware, la programación y las necesidades de los usuarios.</p>
+<section id="primera-generacion-tubos-de-vacio">
+<h2><span class="section-number">1.2.1. </span>Primera Generación: Tubos de Vacío<a class="headerlink" href="#primera-generacion-tubos-de-vacio" title="Link to this heading">¶</a></h2>
+<p>Los primeros computadores carecían de sistemas operativos; la programación se hacía directamente en lenguaje máquina.</p>
+</section>
+<section id="segunda-generacion-transistores-y-sistemas-batch">
+<h2><span class="section-number">1.2.2. </span>Segunda Generación: Transistores y Sistemas Batch<a class="headerlink" href="#segunda-generacion-transistores-y-sistemas-batch" title="Link to this heading">¶</a></h2>
+<p>Los programas se ejecutaban en lotes (batch), introduciendo los monitores residentes como primeros gestores de control.</p>
+</section>
+<section id="tercera-generacion-circuitos-integrados-y-multiprogramacion">
+<h2><span class="section-number">1.2.3. </span>Tercera Generación: Circuitos Integrados y Multiprogramación<a class="headerlink" href="#tercera-generacion-circuitos-integrados-y-multiprogramacion" title="Link to this heading">¶</a></h2>
+<p>Aparecen sistemas operativos capaces de ejecutar múltiples tareas concurrentes y gestionar memoria compartida.</p>
+</section>
+<section id="cuarta-generacion-computadores-personales">
+<h2><span class="section-number">1.2.4. </span>Cuarta Generación: Computadores Personales<a class="headerlink" href="#cuarta-generacion-computadores-personales" title="Link to this heading">¶</a></h2>
+<p>Los sistemas operativos se adaptan al usuario final, integrando interfaces gráficas y soporte para dispositivos diversos.</p>
+</section>
+<section id="quinta-generacion-computadores-moviles">
+<h2><span class="section-number">1.2.5. </span>Quinta Generación: Computadores Móviles<a class="headerlink" href="#quinta-generacion-computadores-moviles" title="Link to this heading">¶</a></h2>
+<p>Los sistemas operativos móviles priorizan la eficiencia energética y la conectividad en tiempo real.</p>
+</section>
+</section>
+<section id="revision-del-hardware-de-computadores">
+<h1><span class="section-number">1.3. </span>Revisión del Hardware de Computadores<a class="headerlink" href="#revision-del-hardware-de-computadores" title="Link to this heading">¶</a></h1>
+<p>Comprender los componentes físicos permite entender cómo el sistema operativo interactúa con el hardware subyacente.</p>
+<section id="procesadores">
+<h2><span class="section-number">1.3.1. </span>Procesadores<a class="headerlink" href="#procesadores" title="Link to this heading">¶</a></h2>
+<p>Ejecutan instrucciones y coordinan la ejecución de programas mediante registros y unidades de control.</p>
+</section>
+<section id="memoria">
+<h2><span class="section-number">1.3.2. </span>Memoria<a class="headerlink" href="#memoria" title="Link to this heading">¶</a></h2>
+<p>Almacena temporalmente datos e instrucciones, siendo administrada jerárquicamente por el sistema operativo.</p>
+</section>
+<section id="discos">
+<h2><span class="section-number">1.3.3. </span>Discos<a class="headerlink" href="#discos" title="Link to this heading">¶</a></h2>
+<p>Proveen almacenamiento persistente; los sistemas operativos gestionan su acceso mediante sistemas de archivos.</p>
+</section>
+<section id="dispositivos-de-entrada-salida">
+<h2><span class="section-number">1.3.4. </span>Dispositivos de Entrada/Salida<a class="headerlink" href="#dispositivos-de-entrada-salida" title="Link to this heading">¶</a></h2>
+<p>Permiten la comunicación entre el computador y el entorno físico, controlados por drivers específicos.</p>
+</section>
+<section id="buses">
+<h2><span class="section-number">1.3.5. </span>Buses<a class="headerlink" href="#buses" title="Link to this heading">¶</a></h2>
+<p>Canales de comunicación internos que conectan los distintos componentes del sistema.</p>
+</section>
+<section id="arranque-del-computador">
+<h2><span class="section-number">1.3.6. </span>Arranque del Computador<a class="headerlink" href="#arranque-del-computador" title="Link to this heading">¶</a></h2>
+<p>Describe el proceso mediante el cual el hardware inicializa y transfiere el control al sistema operativo.</p>
+</section>
+</section>
+<section id="el-zoologico-de-sistemas-operativos">
+<h1><span class="section-number">1.4. </span>El Zoológico de Sistemas Operativos<a class="headerlink" href="#el-zoologico-de-sistemas-operativos" title="Link to this heading">¶</a></h1>
+<p>Existen diversos tipos de sistemas operativos, optimizados para arquitecturas y propósitos distintos.</p>
+<section id="sistemas-operativos-mainframe">
+<h2><span class="section-number">1.4.1. </span>Sistemas Operativos Mainframe<a class="headerlink" href="#sistemas-operativos-mainframe" title="Link to this heading">¶</a></h2>
+<p>Diseñados para maximizar el rendimiento en entornos de gran volumen de procesamiento.</p>
+</section>
+<section id="sistemas-operativos-de-servidor">
+<h2><span class="section-number">1.4.2. </span>Sistemas Operativos de Servidor<a class="headerlink" href="#sistemas-operativos-de-servidor" title="Link to this heading">¶</a></h2>
+<p>Gestionan servicios de red, bases de datos y múltiples usuarios simultáneamente.</p>
+</section>
+<section id="sistemas-operativos-multiprocesador">
+<h2><span class="section-number">1.4.3. </span>Sistemas Operativos Multiprocesador<a class="headerlink" href="#sistemas-operativos-multiprocesador" title="Link to this heading">¶</a></h2>
+<p>Aprovechan arquitecturas con múltiples CPUs para ejecutar tareas en paralelo.</p>
+</section>
+<section id="sistemas-operativos-de-computador-personal">
+<h2><span class="section-number">1.4.4. </span>Sistemas Operativos de Computador Personal<a class="headerlink" href="#sistemas-operativos-de-computador-personal" title="Link to this heading">¶</a></h2>
+<p>Centrados en la interacción con el usuario, integrando interfaz gráfica y soporte multimedia.</p>
+</section>
+<section id="sistemas-operativos-empotrados">
+<h2><span class="section-number">1.4.5. </span>Sistemas Operativos Empotrados<a class="headerlink" href="#sistemas-operativos-empotrados" title="Link to this heading">¶</a></h2>
+<p>Optimizados para funcionar en dispositivos de propósito específico con recursos limitados.</p>
+</section>
+<section id="sistemas-operativos-de-tiempo-real">
+<h2><span class="section-number">1.4.6. </span>Sistemas Operativos de Tiempo Real<a class="headerlink" href="#sistemas-operativos-de-tiempo-real" title="Link to this heading">¶</a></h2>
+<p>Garantizan respuestas determinísticas a eventos en un tiempo máximo conocido.</p>
+</section>
+<section id="sistemas-operativos-de-tarjeta-inteligente">
+<h2><span class="section-number">1.4.7. </span>Sistemas Operativos de Tarjeta Inteligente<a class="headerlink" href="#sistemas-operativos-de-tarjeta-inteligente" title="Link to this heading">¶</a></h2>
+<p>Implementan núcleos ligeros y seguros para dispositivos con hardware mínimo.</p>
+</section>
+</section>
+<section id="conceptos-de-los-sistemas-operativos">
+<h1><span class="section-number">1.5. </span>Conceptos de los Sistemas Operativos<a class="headerlink" href="#conceptos-de-los-sistemas-operativos" title="Link to this heading">¶</a></h1>
+<p>Constituyen los fundamentos teóricos que explican el comportamiento interno y externo del sistema operativo.</p>
+<section id="procesos">
+<h2><span class="section-number">1.5.1. </span>Procesos<a class="headerlink" href="#procesos" title="Link to this heading">¶</a></h2>
+<p>Un proceso es una instancia en ejecución de un programa, gestionada y planificada por el sistema operativo.</p>
+</section>
+<section id="espacios-de-direcciones">
+<h2><span class="section-number">1.5.2. </span>Espacios de Direcciones<a class="headerlink" href="#espacios-de-direcciones" title="Link to this heading">¶</a></h2>
+<p>Definen las áreas de memoria asignadas a cada proceso, separando código, datos y pila.</p>
+</section>
+<section id="archivos">
+<h2><span class="section-number">1.5.3. </span>Archivos<a class="headerlink" href="#archivos" title="Link to this heading">¶</a></h2>
+<p>Estructuras lógicas para el almacenamiento persistente de datos.</p>
+</section>
+<section id="entrada-salida">
+<h2><span class="section-number">1.5.4. </span>Entrada/Salida<a class="headerlink" href="#entrada-salida" title="Link to this heading">¶</a></h2>
+<p>Control y sincronización del intercambio de datos entre el procesador y los periféricos.</p>
+</section>
+<section id="proteccion">
+<h2><span class="section-number">1.5.5. </span>Protección<a class="headerlink" href="#proteccion" title="Link to this heading">¶</a></h2>
+<p>Mecanismos que aseguran el uso controlado de recursos y evitan interferencias entre procesos.</p>
+</section>
+<section id="el-shell">
+<h2><span class="section-number">1.5.6. </span>El Shell<a class="headerlink" href="#el-shell" title="Link to this heading">¶</a></h2>
+<p>Interfaz de usuario que permite invocar y controlar los servicios del sistema operativo.</p>
+</section>
+<section id="ontogenia-recapitula-filogenia">
+<h2><span class="section-number">1.5.7. </span>Ontogenia Recapitula Filogenia<a class="headerlink" href="#ontogenia-recapitula-filogenia" title="Link to this heading">¶</a></h2>
+<p>Principio metafórico que compara la evolución histórica de los sistemas con su estructura interna moderna.</p>
+<p><div style="clear: both"></div></p>
+<p><div style="clear: both"></div></p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<div class="related" role="navigation" aria-label="Related">
+  <h3>Navegación</h3>
+</div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 1980.
+      Creado usando <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>
