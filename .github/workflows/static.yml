@@ -1,4 +1,4 @@
-name: SO
+name: Deploy Sphinx documentation to Pages
 
 on:
   push:
@@ -32,7 +32,11 @@ jobs:
       
       - name: Build Sphinx documentation
         run: |
-          make html
+          sphinx-build -b html . _build/html
+      
+      - name: Add .nojekyll
+        run: |
+          touch _build/html/.nojekyll
       
       - name: Setup Pages
         uses: actions/configure-pages@v5
