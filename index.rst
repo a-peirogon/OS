@@ -1,10 +1,5 @@
-Sistemas Operativos
+Sistemas Operativos 
 ================================
-
-.. only:: html
-
- Referencia: Operating System concepts - 10th edition. 
- --------------------------------------------------------------------------------------
 
 .. html sin procesar para centrar el título
 .. raw:: html
@@ -14,7 +9,7 @@ Sistemas Operativos
     text-align: center;
     font-size: 280% ;
     font-weight: bold;
-    margin-bottom: 4px;
+    margin: 0 4px auto;
     }
     div.documentwrapper h2 {
     background-color: white;
@@ -27,6 +22,7 @@ Sistemas Operativos
     a.headerlink:after {
     content: "";
     }
+
     div.sidebar {
     margin-right: -20px;
     margin-top: -10px;
@@ -58,7 +54,13 @@ Sistemas Operativos
 
 .. only:: html
 
-Los sistemas operativos son un componente esencial de cualquier sistema informático. Se ejecutan continuamente desde que el sistema se inicia, gestionan los recursos del hardware y ofrecen un entorno para la ejecución de los programas. Por ejemplo, aunque un sistema solo tenga una CPU y una cantidad limitada de memoria —como era común hasta hace unos años— los sistemas operativos modernos son capaces de crear la ilusión de que es capaz de ejecutar múltiples tareas en paralelo y los programadores, por lo general, no tienen que preocuparse por la cantidad de memoria realmente disponible.
+    .. sidebar:: Referencias
+
+       * `Operating Systems: Three Easy Pieces <https://pages.cs.wisc.edu/~remzi/OSTEP/>`_
+
+    .. topic:: Apuntes de clase
+
+        Material exploratorio sobre el núcleo de cualquier sistema infórmatico: los sistemas operativos. Me propongo en el presente estudiar los fundamentos cubiertos por diferentes referencias bibliográficas, a fin de adquirir los rudimentos apropiados del campo en cuestión.
 
 Versión: |release|
 

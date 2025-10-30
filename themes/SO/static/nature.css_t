@@ -41,7 +41,7 @@ body {
 
 div.body {
   color: #333332;
-  padding: 0 10px 30px 10px;
+  /*! padding: 0 10px 30px 10px; */
 }
 
 div.body h1,
@@ -281,6 +281,10 @@ div.body {
 
 div.sphinxsidebarwrapper {
     padding: 0px;
+}
+
+aside.sidebar {
+    margin: 15px 0 0.5em 1em !important;
 }
 
 div.sphinxsidebar {
@@ -545,8 +549,8 @@ div.body h1, div.body h2, div.body h3, div.body h4, hr {
 div.body h1 {
     text-align: center;
     font-size: 200%;
-    border: none;
-    background-color: transparent;
+    /*! border: none; */
+    /*! background-color: transparent; */
     padding: 10px;
 }
 /* pre */
@@ -675,6 +679,7 @@ div.highlight:hover span.copybutton:hover {
 div.body p {
     margin-bottom : .3em;
     margin-top : .7em;
+    /*! background: #eee; */
 }
 
 div.body ul, div.body ol, div.body blockquote {
